@@ -21,4 +21,20 @@ var Charge = function(){ }
 */
 Charge.prototype.use = function(opponent) {
   
+  this.charged = true
+
+  var maxCharge = self.power * 2
+
+  var chargedAttack = Math.ceiling(Math.random() * maxCharge) 
+
+  if (this.charged = true) {
+
+    opponent.health = opponent.health - chargedAttack
+
+    this.charged = !this.charged
+
+
+  }
+
+  return attack
 }

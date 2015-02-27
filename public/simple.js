@@ -14,5 +14,10 @@ var Simple = function(){ }
   It returns 3. 
 */
 Simple.prototype.use = function(opponent) {
-  
+
+  var simple = 3
+
+  opponent.health = opponent.health - simple
+
+  return simple
 }

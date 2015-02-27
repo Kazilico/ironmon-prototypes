@@ -9,9 +9,27 @@
   It also contains a property passed in as a parameter:
     - name
 */
-var Ironmon = function(name) {
-
+var Ironmon = function(name, type) {
+  
+  this.health = 25;
+  this.power = 1;
+  this.charged = false;
+  this.name = name;
+  this.type = type;
 }
+
+Ironmon.prototype.isFire = function() {
+  return (this.type === "fire")
+}
+
+Ironmon.prototype.isWater = function() {
+  return (this.type === "water")
+}
+
+Ironmon.prototype.isGrass = function() {
+  return (this.type === "grass")
+}
+
 
 /*
   This function determines a random *integer* between 1 and 5.
@@ -22,14 +40,20 @@ var Ironmon = function(name) {
     make the Ironmon's health go above 25, it becomes 25 instead.
 */
 Ironmon.prototype.heal = function() {
+  var heal = Math.ceil(Math.random() *5)
 
+  this.health = heal + this.health
+
+  if (this.health > 25){
+    this.health = 25
+  } 
 }
 
 /*
   This function adds one to the power of the Ironmon.
 */
 Ironmon.prototype.train = function() {
-
+  this.power = (this.power + 1)
 }
 
 /*
@@ -39,6 +63,10 @@ Ironmon.prototype.train = function() {
 */
 Ironmon.prototype.active = function() {
 
+  if (this.health >= 1){
+    return true
+  }
+  return false
 }
 
 /*
@@ -52,5 +80,7 @@ Ironmon.prototype.active = function() {
 */
 Ironmon.prototype.action = function(opponent, action) {
 
-}
+  return action.use.call(this, opponent)
+
+ } 
 
