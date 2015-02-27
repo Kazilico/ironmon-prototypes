@@ -82,5 +82,5 @@ Ironmon.prototype.action = function(opponent, action) {
 
   return action.use.call(this, opponent)
 
- } 
+} 
 

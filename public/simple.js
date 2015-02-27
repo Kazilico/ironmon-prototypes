@@ -15,9 +15,9 @@ var Simple = function(){ }
 */
 Simple.prototype.use = function(opponent) {
 
-  var simple = 3
+  var simpleAttack = 3
 
-  opponent.health = opponent.health - simple
-
-  return simple
+  opponent.health = opponent.health - simpleAttack
+  
+  return simpleAttack
 }

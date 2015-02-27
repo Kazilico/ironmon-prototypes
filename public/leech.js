@@ -17,18 +17,14 @@ var Leech = function(){ }
 */
 Leech.prototype.use = function(opponent) {
 
-  var leechAttack = opponent.health - 1
+  opponent.health = opponent.health - 1
   var leechCharge = Math.ceil(Math.random() *2)
 
-  if (leechCharge = 1) {
+  if (leechCharge === 1) {
 
-  	self.power = self.power + 1
+  	this.power = this.power + 1
   }
 
-  if (leechCharge = 2) {
+  return 1
 
-  	self.power = self.power
-  }
-  return leechAttack
-  console.log(leechAttack)
 }
